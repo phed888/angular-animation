@@ -1,7 +1,22 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <h1>My quotes</h1>
 
-<app-quote class="favorite"></app-quote>
-<app-quote class="boring"></app-quote>
+<div class="interesting">
+  <app-quote
+    (click)="isFavorite = !isFavorite"
+    [ngClass]="{'favorite super-favorite': isFavorite}"
+    [ngStyle]="{'width.px': isFavorite ? 600 : 400}">
+  </app-quote>
+</div>
+<button
+  (click)="onShowBoring(boringBlock)">
+  Show boring quotes
+</button>
+<div class="boring" #boringBlock style="display: none">
+  <div id="very-boring">
+    <app-quote></app-quote>
+  </div>
+</div>
+
 
 

@@ -12,11 +12,15 @@ h1 {
   margin-top: 0;
 }
 
-:host(.favorite) {
+:host-context(.favorite) {
   border: 1px solid red;
 }
 
-:host(.boring) {
+:host-context(.boring #very-boring) {
   border: 1px solid #cccccc;
+  color: #cccccc;
+}
+
+:host-context(.boring #very-boring) /deep/ h1{
   color: #cccccc;
 }
